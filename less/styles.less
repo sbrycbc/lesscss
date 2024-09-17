@@ -94,3 +94,54 @@ body{
 .secondary-button {
    .button-styles(aqua, #000, 0 4px rgba(0,0,0,0.1));
 }
+
+// FUNCTIONS IN LESS
+// color-function
+
+@base-color: #3458db;
+
+.lighten-blue{
+   background-color: lighten(@base-color, 20%);
+ 
+}
+
+.darken-blue{
+   background-color: darken(@base-color, 20%);
+   color: azure;
+}
+
+// mix-function
+
+@color1:#124f7a;
+@color2: #d40000;
+
+.mix-colors{
+   background-color: mix(@color1, @color2, 50%);
+};
+
+// math functions
+
+@base-padding:40px;
+
+.add-padding{
+   padding: @base-padding + 50px;
+   margin: @base-padding - 5px;
+}
+
+// string functions in less 
+
+@base-url:"https://github.com/";
+
+.replace-string{
+   //background-color: lighten(replace(@base-url, "github.com", "gitlab.com"), 20%);
+}
+
+// list functions in less
+
+@list:"item1", "item2", "item3";
+
+.length-example{
+   content: length(@list);
+}
+
+

@@ -83,3 +83,20 @@ body{
   text-decoration: none;
   box-shadow: 0 4px rgba(0, 0, 0, 0.1);
 }
+.lighten-blue {
+  background-color: #8b9fea;
+}
+.darken-blue {
+  background-color: #193390;
+  color: azure;
+}
+.mix-colors {
+  background-color: #73283d;
+}
+.add-padding {
+  padding: 90px;
+  margin: 35px;
+}
+.length-example {
+  content: 3;
+}
