@@ -132,16 +132,19 @@ body{
    content: length(@list);
 }
 */
-.box,
-.red-box {
-  width: 100px;
-  height: 100px;
-  border: 1px solid #000;
+/*
+.box{
+   width: 100px;
+   height: 100px;
+   border: 1px solid #000;
 }
-.round,
-.red-box {
-  border-radius: 10px;
+.round{
+   border-radius: 10px;
 }
-.red-box {
-  background-color: red;
+
+.red-box{
+   &:extend(.box);
+   &:extend(.round);
+   background-color: red;
 }
+   */
