@@ -69,6 +69,7 @@ body{
    background-color: aqua;
 }*/
 
+/*
 // mixins with parameters
 
 .box-shadow(@shadow){
@@ -128,13 +129,6 @@ body{
    margin: @base-padding - 5px;
 }
 
-// string functions in less 
-
-@base-url:"https://github.com/";
-
-.replace-string{
-   //background-color: lighten(replace(@base-url, "github.com", "gitlab.com"), 20%);
-}
 
 // list functions in less
 
@@ -142,6 +136,25 @@ body{
 
 .length-example{
    content: length(@list);
+}
+*/
+
+//basic syntax
+// .selector:extend(.other-selector);
+
+.box{
+   width: 100px;
+   height: 100px;
+   border: 1px solid #000;
+}
+.round{
+   border-radius: 10px;
+}
+
+.red-box{
+   &:extend(.box);
+   &:extend(.round);
+   background-color: red;
 }
 
 

@@ -63,40 +63,85 @@ body{
    .button-styles;
    background-color: aqua;
 }*/
+/*
+// mixins with parameters
+
+.box-shadow(@shadow){
+   box-shadow: @shadow;
+}
+
+
+.button-styles(@bg-color, @text-color, @shadow){
+   padding: 10px 20px;
+   border-radius: 5px;
+   background-color: @bg-color;
+   color: @text-color;
+   border: none;
+   cursor: pointer;
+   text-decoration: none;
+   .box-shadow(@shadow)
+}
+
 .primary-button {
-  padding: 10px 20px;
-  border-radius: 5px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  box-shadow: 0 4px rgba(0, 0, 0, 0.1);
+   .button-styles(#007bff, white, 0 4px rgba(0,0,0,0.1));
 }
+
 .secondary-button {
-  padding: 10px 20px;
-  border-radius: 5px;
-  background-color: aqua;
-  color: #000;
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  box-shadow: 0 4px rgba(0, 0, 0, 0.1);
+   .button-styles(aqua, #000, 0 4px rgba(0,0,0,0.1));
 }
-.lighten-blue {
-  background-color: #8b9fea;
+
+// FUNCTIONS IN LESS
+// color-function
+
+@base-color: #3458db;
+
+.lighten-blue{
+   background-color: lighten(@base-color, 20%);
+ 
 }
-.darken-blue {
-  background-color: #193390;
-  color: azure;
+
+.darken-blue{
+   background-color: darken(@base-color, 20%);
+   color: azure;
 }
-.mix-colors {
-  background-color: #73283d;
+
+// mix-function
+
+@color1:#124f7a;
+@color2: #d40000;
+
+.mix-colors{
+   background-color: mix(@color1, @color2, 50%);
+};
+
+// math functions
+
+@base-padding:40px;
+
+.add-padding{
+   padding: @base-padding + 50px;
+   margin: @base-padding - 5px;
 }
-.add-padding {
-  padding: 90px;
-  margin: 35px;
+
+
+// list functions in less
+
+@list:"item1", "item2", "item3";
+
+.length-example{
+   content: length(@list);
 }
-.length-example {
-  content: 3;
+*/
+.box,
+.red-box {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000;
+}
+.round,
+.red-box {
+  border-radius: 10px;
+}
+.red-box {
+  background-color: red;
 }
