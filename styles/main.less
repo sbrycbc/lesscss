@@ -5,3 +5,36 @@
 
 @import "components/_buttons.less";
 @import "components/_header.less";
+
+
+
+//   button styles 
+
+@button-bg :#dbb734;
+@button-hover-bg: #d70da1;
+@button-color:#fff;
+@button-padding:10px 20px;
+@button-margin:20px;
+@button-border-radius: 5px;
+@button-font-size:16px;
+@button-border:none;
+@button-transition:all 0.3s ease;
+
+.my-button{
+    background-color: @button-bg;
+    color: @button-color;
+    padding: @button-padding;
+    margin: @button-margin;
+    border-radius: @button-border-radius;
+    font-size: @button-font-size;
+    border: @button-border;
+    cursor:pointer;
+    transition: @button-transition;
+    position: relative;
+    z-index: -1;
+    overflow: hidden;
+    &:hover{
+        background-color: @button-hover-bg;
+        transform: scale(1.05);
+    }
+}
