@@ -10,7 +10,7 @@
 
 //   button styles 
 
-@button-bg :#dbb734;
+/* @button-bg :#dbb734;
 @button-hover-bg: #d70da1;
 @button-color:#fff;
 @button-padding:10px 20px;
@@ -85,4 +85,70 @@
     .col{
         .column(12)
     }
+}
+
+// test blog
+
+@background-color:#3498db;
+@font-color:#392e4a;
+
+body {
+    background-color: @background-color;
+  
+}
+
+h1{
+    color: @font-color;
+}
+
+//// -- Nesting styles -- ///
+
+@h2font-color:red;
+
+.blog{
+    .blog_title{
+        color:@h2font-color;
+    }
+    .blog_body{
+        color:blue;
+        font-size: 30px;
+    }
+    .blog_footer{
+        a{
+            color: pink;
+            &:hover {
+                color: hotpink;
+                font-size: 15px;
+            }
+        }
+    }
+} */
+
+//// -- Mixins styles -- ///
+
+@font-color:#16453e;
+
+.bordered {
+    border-top: dotted 1px black;
+    border-bottom: solid 2px black;
+}
+
+h1{
+    color:@font-color;
+    .bordered;
+}
+
+.box (@width, @height, @box-color) {
+    width: @width;
+    height: @height;
+    background-color:@box-color;
+  
+}
+
+.box1 {
+    .box(100px, 200px,#e33d94);
+}
+
+.box2{
+    .box(200px, 100px, #3498db);
 }

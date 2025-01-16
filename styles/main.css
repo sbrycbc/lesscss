@@ -40,61 +40,135 @@ p {
   margin: 0;
   font-size: 2.5em;
 }
-.my-button {
-  background-color: #dbb734;
-  color: #fff;
-  padding: 10px 20px;
-  margin: 20px;
-  border-radius: 5px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  z-index: -1;
-  overflow: hidden;
+/* @button-bg :#dbb734;
+@button-hover-bg: #d70da1;
+@button-color:#fff;
+@button-padding:10px 20px;
+@button-margin:20px;
+@button-border-radius: 5px;
+@button-font-size:16px;
+@button-border:none;
+@button-transition:all 0.3s ease;
+
+.my-button{
+    background-color: @button-bg;
+    color: @button-color;
+    padding: @button-padding;
+    margin: @button-margin;
+    border-radius: @button-border-radius;
+    font-size: @button-font-size;
+    border: @button-border;
+    cursor:pointer;
+    transition: @button-transition;
+    position: relative;
+    z-index: -1;
+    overflow: hidden;
+    &:hover{
+        background-color: @button-hover-bg;
+        transform: scale(1.05);
+    }
 }
-.my-button:hover {
-  background-color: #d70da1;
-  transform: scale(1.05);
-}
-.row {
-  margin-left: -20px / 2;
-  margin-right: -20px / 2;
-}
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.container {
-  width: 100%;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-.col {
-  width: 25%;
-  float: left;
-  padding: 0 20px / 2;
-  box-sizing: border-box;
-  background: #eee;
-  padding: 10px;
-  margin-bottom: 10px;
-  text-align: center;
-}
-@media (max-width: 768px) {
-  .col {
-    width: 50%;
+
+// grid styles
+
+@grid-columns:12;
+@gutter-width:20px;
+
+.column(@columns: 1){
+    width: percentage((@columns / @grid-columns));
     float: left;
-    padding: 0 20px / 2;
+    padding: 0 @gutter-width / 2;
     box-sizing: border-box;
-  }
 }
-@media (max-width: 480px) {
-  .col {
+
+.row{
+    margin-left: -@gutter-width / 2;
+    margin-right: -@gutter-width / 2;
+    &:after{
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+.container{
     width: 100%;
-    float: left;
-    padding: 0 20px / 2;
+    padding: 0 @gutter-width;
     box-sizing: border-box;
-  }
+}
+
+.col{
+    .column(3);
+    background: #eee;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+@media(max-width:768px) {
+    .col{
+        .column(6)
+    }
+}
+
+@media(max-width:480px) {
+    .col{
+        .column(12)
+    }
+}
+
+// test blog
+
+@background-color:#3498db;
+@font-color:#392e4a;
+
+body {
+    background-color: @background-color;
+  
+}
+
+h1{
+    color: @font-color;
+}
+
+//// -- Nesting styles -- ///
+
+@h2font-color:red;
+
+.blog{
+    .blog_title{
+        color:@h2font-color;
+    }
+    .blog_body{
+        color:blue;
+        font-size: 30px;
+    }
+    .blog_footer{
+        a{
+            color: pink;
+            &:hover {
+                color: hotpink;
+                font-size: 15px;
+            }
+        }
+    }
+} */
+.bordered {
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}
+h1 {
+  color: #16453e;
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}
+.box1 {
+  width: 100px;
+  height: 200px;
+  background-color: #e33d94;
+}
+.box2 {
+  width: 200px;
+  height: 100px;
+  background-color: #3498db;
 }
